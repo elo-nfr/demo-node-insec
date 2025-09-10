@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 /* ---------- Credenciais embutidas (vulnerável) ---------- */
 const HARDCODED_USER = 'admin';
 const HARDCODED_PASS = '12345';
-const FAKE_API_KEY = 'APIKEY_987654321';
+const API_KEY = 'APIKEY_987654321';
 
 /* ---------- Banco de dados simulado ---------- */
 const fakeUsers = [
@@ -70,7 +70,7 @@ app.post('/run-command', (req, res) => {
 
 // 5. Uso de API key hardcoded
 app.get('/pay', (req, res) => {
-  res.send({ apiKey: FAKE_API_KEY });
+  res.send({ apiKey: API_KEY });
 });
 
 /* ---------- Rota segura para comparação ---------- */
