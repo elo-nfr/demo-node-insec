@@ -1,0 +1,25 @@
+{
+  "name": "insecure-app",
+  "version": "1.1.0",
+  "description": "Aplicação Node.js intencionalmente insegura para fins educativos",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Demo Educacional",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2",
+    "escape-html": "^1.0.3",
+
+    "lodash": "4.17.4", 
+    "jquery": "1.6.4",
+    "minimist": "0.0.8",
+
+    "event-stream": "3.3.6",
+    "eslint-scope": "3.7.2",
+    "npmcli-login": "0.0.10"
+  }
+}
+
