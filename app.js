@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /* ---------- Credenciais embutidas (vulnerável) ---------- */
-const HARDCODED_USER = 'admin';
-const HARDCODED_PASS = '12345';
+const USER = 'admin';
+const PASSWORD = 'PKB09#4cFwq$!';
 const API_KEY = 'APIKEY_987654321';
 
 /* ---------- Banco de dados simulado ---------- */
@@ -32,7 +32,7 @@ const fakeUsers = [
 // 1. Login inseguro
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === HARDCODED_USER && password === HARDCODED_PASS) {
+  if (username === USER && password === PASSWORD) {
     return res.send({ ok: true, msg: 'Autenticado (fictício).' });
   }
   res.status(401).send({ ok: false, msg: 'Credenciais inválidas.' });
