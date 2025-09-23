@@ -21,7 +21,7 @@ const PASSWORD = 'PKB09#4cFwq$!';
 const API_KEY = 'APIKEY_987654321';
 
 /* ---------- Banco de dados simulado ---------- */
-const fakeUsers = [
+const dbUsers = [
   { id: 1, username: 'alice', email: 'alice@example.com' },
   { id: 2, username: 'bob', email: 'bob@example.com' },
   { id: 3, username: 'charlie', email: 'charlie@example.com' },
@@ -42,7 +42,7 @@ app.post('/login', (req, res) => {
 app.get('/search-users', (req, res) => {
   const q = req.query.q || '';
   const vulnerableSql = `SELECT * FROM users WHERE username LIKE '%${q}%' OR email LIKE '%${q}%'`;
-  const results = fakeUsers.filter(u =>
+  const results = dbUsers.filter(u =>
     u.username.includes(q) || u.email.includes(q)
   );
   res.send({ vulnerableSql, results });
